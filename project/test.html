@@ -1,0 +1,9 @@
+<?php
+if(isset($_POST['submit']) && is_uploaded_file($_FILES['image']['tmp_name'])){
+	
+	$img_name = $_FILES['image']['name'];
+	$target = 'C:/Users/superspeed/Desktop/work/project/html-web/uploads/'.basename($_FILES['image']['name']);
+	move_uploaded_file($_FILES['image']['tmp_name'], $target);
+	echo'<script>alert("Upload Successed!!")</script>';
+}
+?>
